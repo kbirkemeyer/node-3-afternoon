@@ -1,4 +1,4 @@
 INSERT INTO product
-(name, description, image_url)
+(name, description, price, image_url)
 VALUES 
 ($1, $2, $3, $4);
