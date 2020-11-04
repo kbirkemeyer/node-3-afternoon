@@ -10,7 +10,7 @@ module.exports = {
     getOne: (req, res) => {
         const db = req.app.get('db');
         db.read_product()
-        .then(() => res.status(200))
+        .then(product => res.status(200).send(product))
         .catch(err => {console.log(err)
         res.status(500).send("Oh snap! Something's not right...")
         })
@@ -18,7 +18,7 @@ module.exports = {
     getAll: (req, res) => {
         const db = req.app.get('db');
         db.read_products()
-        .then(() => res.status(200))
+        .then(products => res.status(200).send(products))
         .catch(err => {console.log(err)
         res.status(500).send("Oh snap! Something's not right...")
         })
